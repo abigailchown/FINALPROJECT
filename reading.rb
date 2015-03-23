@@ -16,7 +16,7 @@ http.use_ssl     = true
 http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
 # Issue the request.
-request.oauth! http, $consumer_key, $access_token
+request.oauth! http, $oauth_consumer, $oauth_access
 http.start
 response = http.request request
 

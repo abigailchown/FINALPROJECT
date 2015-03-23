@@ -2,18 +2,15 @@
 
 def image_search(queryString)
 
-#queryString = ARGV[0]
+    #queryString = ARGV[0]
+    query_url = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=puppy"
+    json = JSON.parse(open(query_url).read)
 
-if statement == true
-	queryString = 'puppy'
 
-query_url = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=#{queryString}"
-json = JSON.parse(open(query_url).read)
+    url = json["responseData"]["results"][0]["url"]
 
-url = json["responseData"]["results"][0]["url"]
+    puts url
 
-puts url
-
-url
+    url
 
 end

@@ -10,8 +10,8 @@ require './reading'
 require './sendtweet2'
 
 # Set up OAuth
-$consumer_key = OAuth::Consumer.new(jPtNR4XZQisNZKnM3lqpaS483, 6mnbF0qfz715Sb4bQCmL2D2FRZLKF2lgLoNZ1OqoOZzOq8q0tC)
-$access_token = OAuth::Token.new(3062007137-gLDJ7SaDruF76IQ8SKMQdcZo55zYNEpXYhhtufN, 6hVpBowHSwuoNcK89aJhAIvfhjhRtiwjm0r41yRW4qgvy)
+$oauth_consumer = OAuth::Consumer.new($consumer_key, $consumer_secret)
+$oauth_access = OAuth::Token.new($access_token, $access_secret)
 
 #check to see if a certain word is in the tweets
 queryString = ARGV[0]
@@ -52,5 +52,4 @@ end
 
 puts "Successfully sent #{tweet["text"]}"
 
-end
 
